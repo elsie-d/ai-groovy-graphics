@@ -1,1 +1,86 @@
-/* style me */
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px;
+    align-items: center;
+    border-bottom: ridge;
+    border-color: white;
+    background-color: #1c17a9;
+    color: white;
+}
+
+#main-nav a {
+    text-decoration: none;
+    font-size: 20px;
+
+}
+
+.container-intro {
+    background-color: #1c17a9;
+    padding: 50px;
+}
+
+.intro {
+    width: 50%;
+    margin-top: 2px;
+    padding: 10px;
+    background-color: #1c17a9;
+    color: white;
+}
+
+
+.intro p {
+    font-size: 25px;
+}
+
+.container-row {
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    padding: 40px;
+    /* background-color: #282828; */
+}
+
+.album-img {
+    width: 32%;
+}
+
+.album-img img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    padding-top: 20px;
+}
+
+#create-btn {
+    border-radius: 3px;
+    padding: 8px 50px;
+
+}
+
+.container-reviews {
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    padding: 40px;
+}
+
+.container-reviews> div {
+    gap: 20px;
+}
+
+.container-reviews .card {
+    height: 300px;
+}
