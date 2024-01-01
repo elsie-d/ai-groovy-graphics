@@ -1,5 +1,9 @@
 body {
     font-family: 'Quicksand', sans-serif;
+    background-image: url("/photos/pexels-bruno-thethe-1910236.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .top-header {
@@ -7,10 +11,8 @@ body {
     justify-content: space-between;
     padding: 10px 50px;
     align-items: center;
-    border-bottom: ridge;
-    border-color: white;
-    background-color: #1c17a9;
-    color: white;
+    background-color: currentColor;
+   
 }
 
 #main-nav a {
@@ -20,21 +22,37 @@ body {
 }
 
 .container-intro {
-    background-color: #1c17a9;
-    padding: 50px;
+    background-color: currentColor;
+    padding: 80px;
+    border-bottom: groove;
 }
 
 .intro {
     width: 50%;
     margin-top: 2px;
     padding: 10px;
-    background-color: #1c17a9;
     color: white;
 }
 
 
 .intro p {
     font-size: 25px;
+}
+
+@keyframes dropDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropping-heading,
+.dropping-paragraph {
+    animation: dropDown 6s ease forwards;
 }
 
 .container-row {
@@ -53,8 +71,12 @@ body {
     width: 100%;
     height: auto;
     margin-top: 10px;
+    transition: transform 0.5s ease;
 }
 
+.album-img img:hover {
+    transform: scale(1.1) translate(50px);
+}
 
 .container {
     display: flex;
@@ -84,3 +106,4 @@ body {
 .container-reviews .card {
     height: 300px;
 }
+
