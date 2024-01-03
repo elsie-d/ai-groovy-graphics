@@ -1,2 +1,5 @@
-DROP DATABASE IF EXISTS db_groovy;
-CREATE DATABASE db_groovy;
+
+DROP DATABASE IF EXISTS groovy_graphics_db;
+CREATE DATABASE groovy_graphics_db;
+
+
