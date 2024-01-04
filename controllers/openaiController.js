@@ -12,7 +12,7 @@ const openai = new OpenAI({
 const generateImage = async () =>{
 const response = await openai.images.generate({
   model: "dall-e-2",
-  prompt: "red panda",
+  prompt: "photoText",
   n: 1,
   size: "1024x1024",
 });
@@ -21,6 +21,10 @@ const response = await openai.images.generate({
   console.log(imageUrlList)
 };
 
+
+generateImage();
+
+module.exports = { generateImage };
 
 // const generateImage = async () =>{
 //   const response= await openai.images.generate({
@@ -34,11 +38,6 @@ const response = await openai.images.generate({
 //   const imageUrlList=imageUrl.map(image=>image.url)
 //   console.log(imageUrlList)
 // }
-
-generateImage();
-
-module.exports = { generateImage };
-
 // module.exports = { generateImage };
 
 

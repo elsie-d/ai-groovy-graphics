@@ -9,23 +9,33 @@ body {
 .top-header {
     display: flex;
     justify-content: space-between;
-    padding: 10px 50px;
+    padding: 10px 60px;
     align-items: center;
     background-color: currentColor;
-   
+}
+
+.top-header h1 {
+    color: white;
+    padding: 10px;
+    margin: 18px;
 }
 
 #main-nav a {
     text-decoration: none;
     font-size: 20px;
+    color: white;
 
 }
 
 .container-intro {
     background-color: currentColor;
-    padding: 80px;
+    padding: 40px;
     border-bottom: groove;
+    display: flex;
+    /* align-items: center; */
 }
+
+
 
 .intro {
     width: 50%;
@@ -34,12 +44,57 @@ body {
     color: white;
 }
 
+.intro-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.intro-paragraph {
+    flex: 1;
+    margin-bottom: 20px;
+}
 
 .intro p {
     font-size: 25px;
 }
 
-@keyframes dropDown {
+.intro-images-circle {
+    display: flex;
+   flex-direction: row;
+    height: auto;
+    margin-left: auto;
+}
+
+.intro-images-circle img {
+    width: 120px;
+    height: auto;
+    /* position: absolute; */
+    margin-right: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 10s linear infinite;
+    /* padding: 10px; */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg) translate(-100px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translate(-100px) rotate(-360deg);
+    }
+}
+
+/* .spin-container {
+    animation: spin 25s linear infinite;
+} */
+
+
+
+/* @keyframes dropDown {
     0% {
         opacity: 0;
         transform: translateY(-50px);
@@ -48,7 +103,7 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-}
+} */
 
 .dropping-heading,
 .dropping-paragraph {

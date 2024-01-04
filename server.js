@@ -8,34 +8,35 @@ const dotenv = require('dotenv').config();
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
+
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Set up Handlebars.js engine with custom helpers
+
 const hbs = exphbs.create({ helpers });
 
 const sess = {
-  // Signs the session
+
   secret: 'Super secret secret',
-  // This IS essentially the session
+  
   cookie: {
-    // when the cookie will expire (in ms)
+   
     maxAge: 300000,
-    // prevents access through JS in the client
+  
     httpOnly: true,
-    // Server and Client will reject if not served from HTTPS
+    
     secure: false,
-    // Only sites on the same domain can use this cookie
+    
     sameSite: 'strict',
   },
-  // forces the session to be saved even if nothing changed
+ 
   resave: false,
-  // forces a session to be saved when it is new regardless of if anything has changed
+  
   saveUninitialized: true,
-  // where to store the session on the server
+
   store: new SequelizeStore({
     db: sequelize
   })
@@ -43,7 +44,7 @@ const sess = {
 
 app.use(session(sess));
 
-// Inform Express.js on which template engine to use
+
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
@@ -56,6 +57,7 @@ app.use(routes);
 app.use('/openai', require('./controllers/api/openaiRoutes'));
 app.use(bodyParser.json());
 app.use(cors());
+
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
