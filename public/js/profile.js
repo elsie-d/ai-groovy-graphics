@@ -1,33 +1,39 @@
-const generatePhoto = async (event) => {
-    event.preventDefault();
 
+
+
+const generatePhoto = async () => {
+    const generatedImage = document.querySelector(".generated-image");
     const photoInput = document.getElementById('photo-input');
-    const photoText = photoInput.value;
+    const prompt = photoInput.value;
 
-    try {
-        const response = await fetch('/openai/generateImage', {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json',
-            },
-            body: JSON.stringify({ prompt: photoText }),
-        });
-        const { imageURL } = await response.json();
+    if (prompt){
+        try {
+          
 
-        const image = document.createElement('img');
-        image.src = imageURL;
+            const response = await fetch('api/openai/generateImage',{
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({prompt: prompt }),
+            });
+             
+            const  data = await response.json();
+           // const image = `data:image/jpeg;base64, ${data.image}`;
+           // generatedImage.src = image;
+           console.log(response)
 
-        const photoContainer = document.getElementById('photo-container');
-        photoContainer.innerHTML = '';
-        photoContainer.appendChild(image);
-    } catch (error) {
-        console.error('Error generating photo:', error);
-    }
-}
+        } catch(error) {
+            console.log(error);
+            alert(error);
+        }} 
+    else {
+            console.log('blank prompt')
+        }
+    
+};
+
+
 
 document.querySelector('.btn')
     .addEventListener('click', generatePhoto)
-
-
-
-
