@@ -16,26 +16,29 @@
 <body>
   <div>
     <header class="top-header">
-      <h1>Groovy Graphics</h1>
+      <h1> AI Groovy Graphics</h1>
       <nav id="main-nav">
+        {{#if showHomeLink}}
         <a href="/">Home</a>
+        {{/if}}
+        {{#if showLoginSignupLinks}}
+        <a href="/login">Login/Signup</a>
+        {{/if}}
         {{#if logged_in}}
         <a href="/profile">profile</a> |
         <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
         {{/if}}
       </nav>
     </header>
     <main>
       {{{ body }}}
     </main>
-    <footer>
-     
-    </footer>
+    <div class="footer-container">
+      <footer>
+        <p>2024 AI Groovy Graphics, All rights reserved</p>
+      </footer>
+    </div>
   </div>
-
-
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}

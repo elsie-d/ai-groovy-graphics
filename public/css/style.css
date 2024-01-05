@@ -1,10 +1,11 @@
 body {
     font-family: 'Quicksand', sans-serif;
-    background-image: url("/photos/pexels-bruno-thethe-1910236.jpg");
+    background-image: url("/photos/pexels-bruno-thethe-1910236.jpg"); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
+
 
 .top-header {
     display: flex;
@@ -12,6 +13,7 @@ body {
     padding: 10px 60px;
     align-items: center;
     background-color: currentColor;
+    border-bottom: 2px groove white;
 }
 
 .top-header h1 {
@@ -23,6 +25,7 @@ body {
 #main-nav a {
     text-decoration: none;
     font-size: 20px;
+    padding: 5px;
     color: white;
 
 }
@@ -30,7 +33,7 @@ body {
 .container-intro {
     background-color: currentColor;
     padding: 40px;
-    border-bottom: groove;
+    
     display: flex;
     /* align-items: center; */
 }
@@ -115,7 +118,7 @@ body {
     margin: auto;
     margin-top: 20px;
     padding: 40px;
-    /* background-color: #282828; */
+    background-color: #282828;
 }
 
 .album-img {
@@ -144,7 +147,12 @@ body {
 #create-btn {
     border-radius: 3px;
     padding: 8px 50px;
+    background-color: #282828;;
 
+}
+
+#create-btn:hover {
+    background-color: blue;
 }
 
 .container-reviews {
@@ -162,3 +170,52 @@ body {
     height: 300px;
 }
 
+.footer-container {
+    padding: 20px;
+    text-align: center;   
+    background-color: #282828;
+    border-top: 5px groove white;
+}
+
+.footer-container p {
+    color: white;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 100vh;
+    color: white;
+    font-size: 20px;
+    padding: 30px;
+    /* background-color: rgb(1, 9, 60); */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-input {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: gray;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: blue;
+}
