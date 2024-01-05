@@ -1,15 +1,15 @@
 
 
 
-const generatePhoto = async () => {
+const generatePhoto = async (event) => {
+    event.preventDefault();
     const generatedImage = document.querySelector(".generated-image");
     const photoInput = document.getElementById('photo-input');
     const prompt = photoInput.value;
-
+    
     if (prompt){
         try {
-          
-
+            generatedImage.src = "photos/images.jpg"
             const response = await fetch('api/openai/generateImage',{
                 method: 'POST',
                 headers: {
@@ -17,15 +17,15 @@ const generatePhoto = async () => {
                 },
                 body: JSON.stringify({prompt: prompt }),
             });
-             
+             console.log(response)
             const  data = await response.json();
-           // const image = `data:image/jpeg;base64, ${data.image}`;
-           // generatedImage.src = image;
-           console.log(response)
+            const image = `${data.image}`;
+            generatedImage.src = image;
+           
 
         } catch(error) {
             console.log(error);
-            alert(error);
+           // alert(error);
         }} 
     else {
             console.log('blank prompt')
