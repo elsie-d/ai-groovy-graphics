@@ -17,11 +17,13 @@ const generateImage = async (prompt) => {
         prompt: prompt,
         n: 1,
         size: "256x256",
+    
         
     });
-    console.log(response)
-    /* const image = response.data;
-    return image; */
+ // console.log(response)
+  const image = response.data[0].url
+ // console.log(image)
+  return image; 
     
     
 }
@@ -29,8 +31,10 @@ const generateImage = async (prompt) => {
 
 
 router.post('/generateImage', async (req, res) => {
-    const image = await generateImage(req.body.prompt);
-    res.send({image});
+const image = await generateImage(req.body.prompt);
+
+  console.log(image)
+    res.json({image});
 });
 
 

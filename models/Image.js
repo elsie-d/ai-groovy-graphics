@@ -14,7 +14,11 @@ Image.init({
         autoIncrement: true,
 
     },
-
+    url: {
+      type:DataTypes.TEXT,
+      allowNull: false,
+      unique: true,
+    },
     user_id: {
         type: DataTypes.INTEGER,
         references: {
