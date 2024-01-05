@@ -3,7 +3,8 @@ const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
-  res.render('homepage')
+  const showLoginSignupLinks = !req.session.logged_in;
+  res.render('homepage', {showLoginSignupLinks})
 });
 
 router.get('/login', (req, res) => {
