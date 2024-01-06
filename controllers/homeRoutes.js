@@ -23,7 +23,7 @@ router.get('/profile', withAuth, async (req, res) => {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] }
       // once api and images are ready include the Image model 
-     // include: [{ model: Blog }],
+     // include: [{ model: Image }],
     });
 
     const user = userData.get({ plain: true });
