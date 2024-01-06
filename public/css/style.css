@@ -22,6 +22,7 @@ body {
     margin: 18px;
 }
 
+
 #main-nav a {
     text-decoration: none;
     font-size: 20px;
@@ -32,7 +33,7 @@ body {
 
 .container-intro {
     background-color: currentColor;
-    padding: 40px;
+    padding: 44px;
     
     display: flex;
     /* align-items: center; */
@@ -41,7 +42,7 @@ body {
 
 
 .intro {
-    width: 50%;
+    width: 95%;
     margin-top: 2px;
     padding: 10px;
     color: white;
@@ -68,28 +69,80 @@ body {
    flex-direction: row;
     height: auto;
     margin-left: auto;
+} 
+
+
+.slideshow {
+    position: relative;
+    width: 120px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.slideshow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+.slideshow img.active {
+    opacity: 1;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }   
+}
+
+.slideshow img:nth-child(1) {
+    animation: slide 6s infinite;
+}
+.slideshow img:nth-child(2) {
+    animation: slide 6s infinite 4s;
+}
+.slideshow img:nth-child(3) {
+    animation: slide 6s infinite 8s;
+}
+.slideshow img:nth-child(4) {
+    animation: slide 6s infinite 12s;
+}
+.slideshow img:nth-child(5) {
+    animation: slide 12s infinite 16s;
 }
 
 .intro-images-circle img {
-    width: 120px;
+    width: 180px;
     height: auto;
-    /* position: absolute; */
-    margin-right: 10px;
+    margin-right: 20px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     animation: spin 10s linear infinite;
-    /* padding: 10px; */
+    border-style: solid;
+    border-radius: 4px;
 }
 
-@keyframes spin {
+
+/* @keyframes spin {
     0% {
         transform: rotate(0deg) translate(-100px) rotate(0deg);
     }
     100% {
         transform: rotate(360deg) translate(-100px) rotate(-360deg);
     }
-}
+} */
 
 /* .spin-container {
     animation: spin 25s linear infinite;
@@ -97,7 +150,7 @@ body {
 
 
 
-/* @keyframes dropDown {
+@keyframes dropDown {
     0% {
         opacity: 0;
         transform: translateY(-50px);
@@ -106,7 +159,7 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-} */
+}
 
 .dropping-heading,
 .dropping-paragraph {
@@ -145,20 +198,37 @@ body {
 }
 
 #create-btn {
-    border-radius: 3px;
-    padding: 8px 50px;
-    background-color: #282828;;
+    position: relative;
+    overflow: hidden;
 
 }
 
-#create-btn:hover {
-    background-color: blue;
+#create-btn::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background-color: rgba(0, 0, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
 }
+
+#create-btn:hover::after {
+    width: 200%;
+    height: 200%;
+    background-color: blue; 
+}
+
 
 .container-reviews {
-    width: 90%;
+    width: 100%;
     margin: auto;
     margin-top: 20px;
+    margin-bottom: 50px;
     padding: 40px;
 }
 
@@ -168,9 +238,14 @@ body {
 
 .container-reviews .card {
     height: 300px;
+    margin-bottom: 20px;
 }
 
 .footer-container {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     padding: 20px;
     text-align: center;   
     background-color: #282828;
@@ -208,14 +283,47 @@ label {
 }
 
 .btn {
-    padding: 10px 20px;
+    /* padding: 10px 20px;
     background-color: gray;
     color: #fff;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
+    cursor: pointer; */
+    position: relative;
+    overflow: hidden;
+}
+.btn::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background-color: rgba(0, 0, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
 }
 
-.btn:hover {
+.btn:hover::after {
+    width: 200%;
+    height: 200%;
     background-color: blue;
+}
+
+
+#photo-container {
+    display: flex;
+   justify-content: center;
+   margin-top: 30px;
+}
+
+#photo-container img {
+    height: calc((100vw - 400px) * .6);
+    max-height: 67.5vh;
+    width: calc((100vw - 400px) * .6);
+    cursor: pointer;
+    -o-object-fit: contain;
+    object-fit: contain;
 }
