@@ -15,7 +15,7 @@ Image.init({
 
     },
     url: {
-      type:DataTypes.TEXT,
+      type:DataTypes.STRING(500),
       allowNull: false,
       unique: true,
     },
