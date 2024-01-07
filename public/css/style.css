@@ -283,7 +283,7 @@ label {
 }
 
 
-/* .photo-container {
+.photo-container {
     display: flex;
    justify-content: center;
    margin-top: 30px;
@@ -296,4 +296,8 @@ label {
     cursor: pointer;
     -o-object-fit: contain;
     object-fit: contain;
-} */
+} 
+/* Elsie Added -- Feel free to edit */
+#saved-img-card {
+    width: 200px;
+}

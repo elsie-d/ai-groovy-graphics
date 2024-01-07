@@ -24,6 +24,7 @@ const generatePhoto = async (event) => {
             console.log(image)
             generatedImage.src = image;
             downloadImage.href = image;
+          //  document.getElementById('btns-generated').style.display=""
 
         } catch(error) {
             console.log(error);
@@ -54,6 +55,7 @@ const storePhoto = async (event) => {
 
         if(response.ok){
             console.log('save image ok')
+            location.reload(true)
         } else {
             alert('something went wrong')
         }

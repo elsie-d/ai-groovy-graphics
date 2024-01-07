@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Image } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -23,9 +23,9 @@ router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] }
+      attributes: { exclude: ['password'] },
       // once api and images are ready include the Image model 
-     // include: [{ model: Image }],
+      include: [{ model: Image }]
     });
 
     const user = userData.get({ plain: true });
@@ -41,4 +41,3 @@ router.get('/profile', withAuth, async (req, res) => {
 
 
 module.exports = router;
-
