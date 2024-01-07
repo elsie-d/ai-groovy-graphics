@@ -11,6 +11,7 @@
                     <button type="submit" class="btn btn-primary">Generate</button>
                 </div>
             </form>
+            <div id="rendering-block"> 
             <div class="photo-container">
                 <img src="" class="generated-image" alt="" />
             </div>
@@ -22,16 +23,17 @@
                     <button type="submit" class="save-btn btn-primary">Save Image</button>
                 </div>
             </div>
+            </div>
             <div id="saved-imgs"> 
                 {{#if images.length}}
                 <h3>Saved Images</h3>
                 {{#each images as |image|}}
-                <div class="card">
+                <div class="">
                     <div>
                         <img src="{{image.url}}" id="saved-img-card"/>
                     </div>
                     <div>
-                    <button class="btn btn-sm btn-danger" data-id="{{image.id}}">Delete</button>
+                    <button class="btn btn-sm del-btn" data-id="{{image.id}}">Delete</button>
                     </div>
                     
                 </div>

@@ -301,3 +301,7 @@ label {
 #saved-img-card {
     width: 200px;
 }
+
+#rendering-block {
+    display: none;
+}
