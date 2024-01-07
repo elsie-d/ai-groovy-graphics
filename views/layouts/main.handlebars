@@ -11,25 +11,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
   <title>AI Groovy Graphics</title>
   <link rel="stylesheet" href="/css/style.css">
-  
+
 </head>
 
 <body>
   <div>
     <header class="top-header">
-      <h1 class="wavy-heading">AI Groovy Graphics</h1>
-      <nav id="main-nav">
-        {{#if showHomeLink}}
-        <a href="/">Home</a>
-        {{/if}}
-        {{#if showLoginSignupLinks}}
-        <a href="/login">Login/Signup</a>
-        {{/if}}
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{/if}}
-      </nav>
+      <a href="/">
+        <video src="/photos/AI Groovy Grafics (1).mp4" autoplay muted loop></video>
+        <a href="/"></a>
+        <h1 class="wavy-heading">Groovy Graphics</h1>
+        <nav id="main-nav">
+          {{#if showHomeLink}}
+          <a href="/profile">Profile</a>
+          {{/if}}
+          <a href="reviews">Reviews</a>
+          {{#if showLoginSignupLinks}}
+          <a href="/login">Login/Signup</a>
+          
+          {{/if}}
+          {{#if logged_in}}
+          <a href="/profile">Profile</a>
+          <button class="no-button" id="logout">logout</button>
+          
+          {{/if}}
+          
+        </nav>
     </header>
     <main>
       {{{ body }}}
@@ -44,7 +51,7 @@
   <script src="/js/logout.js"></script>
   {{/if}}
 
-  
+
 </body>
 
 </html>
