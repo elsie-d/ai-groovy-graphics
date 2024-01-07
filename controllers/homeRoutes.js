@@ -4,7 +4,9 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   const showLoginSignupLinks = !req.session.logged_in;
-  res.render('homepage', {showLoginSignupLinks})
+  const showHomeLink = true;
+  const showProfileLink = req.session.logged_in;
+  res.render('homepage', {showLoginSignupLinks, showHomeLink, showProfileLink})
 });
 
 router.get('/login', (req, res) => {
