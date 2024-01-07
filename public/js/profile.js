@@ -11,6 +11,7 @@ const generatePhoto = async (event) => {
     if (prompt){
         try {
             generatedImage.src = "photos/tenor-loading-gif.gif"
+            document.getElementById('rendering-block').style.display="block"
             const response = await fetch('api/openai/generateImage',{
                 method: 'POST',
                 headers: {
@@ -24,7 +25,7 @@ const generatePhoto = async (event) => {
             console.log(image)
             generatedImage.src = image;
             downloadImage.href = image;
-          //  document.getElementById('btns-generated').style.display=""
+           
 
         } catch(error) {
             console.log(error);
@@ -63,9 +64,34 @@ const storePhoto = async (event) => {
 } ;
 
 
+const delButtonHandler = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+  
+      const response = await fetch(`/api/images/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        location.reload(true);
+      } else {
+        alert('Failed to delete image');
+      }
+    }
+  };
+
+
+
+
+
+
+
 
 document.querySelector('.btn')
     .addEventListener('click', generatePhoto)
 
 document.querySelector('.save-btn')
-.addEventListener('click', storePhoto)    
+.addEventListener('click', storePhoto)   
+
+document.querySelector('.del-btn')
+  .addEventListener('click', delButtonHandler);
