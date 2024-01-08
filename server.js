@@ -24,7 +24,7 @@ const sess = {
   
   cookie: {
    
-    maxAge: 300000,
+    maxAge: 600000,
   
     httpOnly: true,
     
