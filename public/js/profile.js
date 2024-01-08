@@ -81,10 +81,10 @@ const delButtonHandler = async (event) => {
   };
 
 
-
-
-
-
+  const delBtn = document.querySelector('.del-btn');
+  if (delBtn){
+      delBtn.addEventListener('click', delButtonHandler);
+  };
 
 
 document.querySelector('.btn')
@@ -92,6 +92,3 @@ document.querySelector('.btn')
 
 document.querySelector('.save-btn')
 .addEventListener('click', storePhoto)   
-
-document.querySelector('.del-btn')
-  .addEventListener('click', delButtonHandler);
