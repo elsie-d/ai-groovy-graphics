@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { query } = require('express');
 const { User, Image } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -14,7 +15,7 @@ router.get('/login', (req, res) => {
     res.redirect('profile');
     return;
   }
-
+  
   res.render('login');
 });
 
@@ -27,7 +28,6 @@ router.get('/profile', withAuth, async (req, res) => {
       // Include images saved by user
       include: [{ model: Image }]
     });
-
     const user = userData.get({ plain: true });
 
     res.render('profile', {
