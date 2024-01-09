@@ -35,6 +35,7 @@
             {{#each images as |image|}}
             <div class="saved-image">
                 <img src="{{image.url}}" id="saved-img-card" />
+                <br/>
                 <button class="btn btn-sm del-btn" data-id="{{image.id}}">Delete</button>
             </div>
             {{/each}}
