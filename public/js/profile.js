@@ -41,10 +41,11 @@ const generatePhoto = async (event) => {
 
 const storePhoto = async (event) => {
     event.preventDefault();
-    const url = document.querySelector(".generated-image").src
+    const url = document.querySelector(".generated-image").src;
+
     console.log(url)
 
-   if(url){
+    if(url){
         const response = await fetch('api/images/saveImage', {
             method: 'POST',
             body: JSON.stringify({url}),
@@ -60,7 +61,7 @@ const storePhoto = async (event) => {
         } else {
             alert('something went wrong')
         }
-    }    
+    }   
 } ;
 
 
@@ -85,6 +86,8 @@ const delButtonHandler = async (event) => {
   if (delBtn){
       delBtn.addEventListener('click', delButtonHandler);
   };
+
+
 
 
 document.querySelector('.btn')
