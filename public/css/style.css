@@ -1,4 +1,4 @@
-body {
+html, body {
     font-family: 'Quicksand', sans-serif;
     background-image: url("/photos/pexels-bruno-thethe-1910236.jpg");
     background-size: cover;
@@ -93,10 +93,10 @@ video {
 
 
 .intro-images-circle img {
-     width: 190px; 
+    width: 190px;
     height: auto;
     margin-right: 20px;
-     
+
     margin-bottom: 10px;
     border-style: solid;
     border-radius: 4px;
@@ -127,7 +127,7 @@ video {
 }
 
 .dropping-heading,
-.dropping-paragraph, 
+.dropping-paragraph,
 .intro-images-circle img {
     font-size: 50px;
     font-weight: bolder;
@@ -157,7 +157,7 @@ video {
     transform: scale(1.1) translate(50px);
 }
 
-.container {
+.container-create {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -226,20 +226,24 @@ video {
     color: white;
 }
 
-.row {
+.container-fluid {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    height: 100vh;
-    color: white;
-    font-size: 20px;
-    padding: 30px;
+    min-height: 100vh;
 }
 
 label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+}
+
+.form {
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    padding-top: 10px;
+    margin-left: 10%;
 }
 
 .form-input {
@@ -283,10 +287,26 @@ label {
 }
 
 
+.profile-container {
+    margin-top: 30px;
+}
+
+.new-project-section {
+    margin-bottom: 30px;
+}
+
+h3 {
+    color: white;
+    font-weight: bolder;
+}
+
+.btn {
+    margin-top: 4px;
+}
+
 .photo-container {
-    display: flex;
-   justify-content: center;
-   margin-top: 30px;
+    width: 500px;
+    background-color: lightgray;
 }
 
 .photo-container img {
@@ -296,12 +316,70 @@ label {
     cursor: pointer;
     -o-object-fit: contain;
     object-fit: contain;
-} 
-/* Elsie Added -- Feel free to edit */
-#saved-img-card {
-    width: 200px;
 }
 
-#rendering-block {
-    display: none;
+.download-img {
+    color: darkblue;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.saved-image-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+.saved-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+    padding: 30px;
+}
+
+#saved-imgs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.saved-image {
+    background-color: lightgray;
+    border: 1px solid white;
+    border-radius: 4px;
+    margin: 10px;
+}
+
+.saved-image img {
+    width: 400px;
+    height: auto;
+    margin-top: 10px;
+}
+
+
+.save-btn {
+    margin-right: 28px;
+    background-color: darkblue;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.saved-row .del-btn {
+    background-color: red;
+    margin-top: 10px;
+
+}
+
+
+@media (max-width: 768px) {
+    .saved-image {
+        width: 100%;
+    }
 }
