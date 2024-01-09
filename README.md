@@ -3,7 +3,7 @@
 
     
 ## Description
-This app is meant to help music enthusiasts geneate an album/single cover that will be inspired by their lyrics. 
+"Welcome to Groovy Graphics our AI Music Album Cover Generator! Our application brings your music to life visually by creating unique and captivating album cover images. Simply input any prompt or theme you desire, and our AI-powered system will craft stunning visuals that capture the essence of your music. From vibrant colors to mesmerizing designs, our generator creates one-of-a-kind artwork that perfectly complements your music. Unleash your creativity and visualize your sound with our intuitive and innovative album cover generator."
 
             
 ## Table of Contents
@@ -19,10 +19,10 @@ This app is meant to help music enthusiasts geneate an album/single cover that w
  WIP  
             
 ## Usage
- WIP
+ "To get started, click on the login button and enter your email and password. New users can sign up by providing their name, email, and password. Once logged in, enter any prompt to generate a unique AI image by clicking the 'Generate' button. Save your newly created image or enter another prompt for a different image generation."
             
 ## Contributions
- TBD
+ David Nino, Elsie Duarte, and Ben Langs
 ## License
 ISC
             

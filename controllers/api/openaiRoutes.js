@@ -6,7 +6,7 @@ require("dotenv").config();
 
 
 const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
+     apiKey: process.env.OPENAI_API_KEY,
   }); 
 
 
@@ -31,4 +31,6 @@ const image = await generateImage(req.body.prompt);
 
 
 
+
 module.exports = router;
+
