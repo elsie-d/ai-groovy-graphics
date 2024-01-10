@@ -5,13 +5,13 @@ require("dotenv").config();
 
 
 const openai = new OpenAI({
-    apiKey: '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',
+  apiKey: process.env.OPENAI_API_KEY,
   }); 
 
 
 const generateImage = async (prompt) => {
     const response = await openai.images.generate ({
-      model: 'dall-e-3',
+      model: 'dall-e-2',
         prompt: prompt,
         n: 1,
         size: "1024x1024",       
