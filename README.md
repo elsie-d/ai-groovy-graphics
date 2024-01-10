@@ -10,6 +10,7 @@
             
 - [Installation](#installation)
 - [Usage](#usage)
+- [Dependencies](#dependencies)
 - [Contributing](#contributions)
 - [Tests](#tests)
 - [License](#license)    
@@ -20,7 +21,16 @@
             
 ## Usage
  "To get started, click on the login button and enter your email and password. New users can sign up by providing their name, email, and password. Once logged in, enter any prompt to generate a unique AI image by clicking the 'Generate' button. Save your newly created image or enter another prompt for a different image generation."
-            
+
+
+### Dependencies
+
+* Node and Express.js , handlebar.js
+MySQL, Sequelize, Heroku, Dall-e-3
+
+
+
+
 ## Contributions
  David Nino, Elsie Duarte, and Ben Langs
 ## License
