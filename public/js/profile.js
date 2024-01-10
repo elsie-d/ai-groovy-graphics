@@ -82,11 +82,12 @@ const delButtonHandler = async (event) => {
   };
 
 
-  const delBtn = document.querySelector('.del-btn');
-  if (delBtn){
-      delBtn.addEventListener('click', delButtonHandler);
-  };
 
+
+ const delBtn = document.querySelectorAll('.del-btn');
+  if (delBtn){
+       delBtn.forEach(btn=>btn.addEventListener('click', delButtonHandler))   
+  };
 
 
 

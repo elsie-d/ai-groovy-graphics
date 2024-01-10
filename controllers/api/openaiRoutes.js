@@ -4,8 +4,9 @@ const router = express.Router();
 require("dotenv").config();
 
 
+
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+     apiKey: process.env.OPENAI_API_KEY,
   }); 
 
 
@@ -17,9 +18,7 @@ const generateImage = async (prompt) => {
         size: "1024x1024",       
     });
   const image = response.data[0].url
-  return image; 
-    
-    
+  return image;   
 }
 
 
@@ -31,4 +30,7 @@ const image = await generateImage(req.body.prompt);
 
 
 
+
+
 module.exports = router;
+
